@@ -27,7 +27,6 @@ function newsSlide(){
     var news = new TabChange(tab,cnt,"mouseenter");
     news.changeTab();
 }
-newsSlide();
 
 //攻略文字轮播
 function strategySlide(){
@@ -36,7 +35,6 @@ function strategySlide(){
     var news = new TabChange(tab,cnt,"mouseenter");
     news.changeTab();
 }
-strategySlide();
 
 //同人专区文字轮播
 function tongSlide(){
@@ -45,7 +43,6 @@ function tongSlide(){
     var news = new TabChange(tab,cnt,"mouseenter");
     news.changeTab();
 }
-tongSlide();
 
 // tab切换 封装 无变化过程
 function TabControl(tab,cnt,type){
@@ -76,7 +73,6 @@ function safetrip(){
     var news = new TabControl(tab,cnt,"click");
     news.changeTab();
 }
-safetrip();
 
 // 主角切换
 function protagonist(){
@@ -85,7 +81,6 @@ function protagonist(){
     var news = new TabControl(tab,cnt,"click");
     news.changeTab();
 }
-protagonist();
 
 //式神头像列表切换
 function shishenTab(){
@@ -94,7 +89,6 @@ function shishenTab(){
     var news = new TabControl(tab,cnt,"click");
     news.changeTab();
 }
-shishenTab();
 
 //翻页封装
 function TurnPage(box){
@@ -138,7 +132,6 @@ function nextPage(){
         page.initEvent();
     }
 }
-nextPage();
 
 // 导航栏动画
 function navShow(){
@@ -169,7 +162,6 @@ function navShow(){
         }
     });
 }
-navShow();
 
 // 扫码下载动画
 function showCode(){
@@ -181,7 +173,6 @@ function showCode(){
         download.classList.toggle("pick-up");
     }
 }
-showCode();
 
 // 角色切换动画
 function roleChange(){
@@ -194,7 +185,6 @@ function roleChange(){
         },1000)
     }
 }
-roleChange();
 
 // 轮播图
 var cnt = document.getElementsByClassName("left-banner")[0],
@@ -207,7 +197,6 @@ var cnt = document.getElementsByClassName("left-banner")[0],
     maxLen = imgWidth*num,
     left = -index*imgWidth,
     timer;
-initCarousel();
 
 function initCarousel(){
     var last = img[0].cloneNode(true);
@@ -270,3 +259,18 @@ function initEvent(){
         })(i)
     }
 }
+// 总执行函数
+function init(){
+    newsSlide();
+    strategySlide();
+    tongSlide();
+    safetrip();
+    protagonist();
+    shishenTab();
+    nextPage();
+    navShow();
+    showCode();
+    roleChange();
+    initCarousel();    
+}
+init();
